@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -30,7 +31,7 @@ fun CustomTopAppBar(
     title: String,
     scrollBehavior: TopAppBarScrollBehavior
 ) {
-    TopAppBar(
+    CenterAlignedTopAppBar(
         title = {
             Text(
                 text = title,
@@ -43,7 +44,11 @@ fun CustomTopAppBar(
             titleContentColor = MaterialTheme.colorScheme.onPrimary,
             navigationIconContentColor = MaterialTheme.colorScheme.onPrimary
         ),
-        scrollBehavior = scrollBehavior
+        scrollBehavior = scrollBehavior,
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(MaterialTheme.colorScheme.primary)
+            .shadow(4.dp)
     )
 }
 
@@ -81,6 +86,5 @@ fun CustomTopAppBarWithBack(
             .fillMaxWidth()
             .background(MaterialTheme.colorScheme.primary)
             .shadow(4.dp)
-            .windowInsetsPadding(WindowInsets(0))
     )
 }
