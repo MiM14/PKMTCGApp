@@ -30,3 +30,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "PokemonTCGApp"
 include(":composeApp")
+include(":di")
