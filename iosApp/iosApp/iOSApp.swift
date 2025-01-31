@@ -6,5 +6,6 @@ struct iOSApp: App {
         WindowGroup {
             ContentView()
         }
+        .ignoresSafeArea(edges: .all)
     }
 }

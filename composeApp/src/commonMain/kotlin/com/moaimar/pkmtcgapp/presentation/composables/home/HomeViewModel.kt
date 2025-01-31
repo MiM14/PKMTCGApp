@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.moaimar.pkmtcgapp.data.repository.RemoteDataRepository
 import com.moaimar.pkmtcgapp.domain.model.CardSet
+import com.moaimar.pkmtcgapp.domain.model.getMockCardSetList
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

@@ -23,3 +23,27 @@ data class Images(
     val symbol: String,
     val logo: String
 )
+
+fun getMockCardSetList(): List<CardSet> {
+    return List(10) { index ->
+        CardSet(
+            id = index.toString(),
+            name = "",
+            series = "",
+            printedTotal = 0,
+            total = 0,
+            legalities = Legalities(
+                unlimited = "",
+                standard = "",
+                expanded = ""
+            ),
+            ptcgoCode = "",
+            releaseDate = "",
+            updatedAt = "",
+            images = Images(
+                symbol = "",
+                logo = ""
+            )
+        )
+    }
+}

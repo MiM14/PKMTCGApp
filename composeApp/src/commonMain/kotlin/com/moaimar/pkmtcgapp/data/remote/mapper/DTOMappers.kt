@@ -19,7 +19,7 @@ import com.moaimar.pkmtcgapp.domain.model.Weakness
 fun CardSetResponse.toDomain(): List<CardSet> {
     return (data?.map { cardSetDTO ->
         cardSetDTO.toDomain()
-    }?: emptyList())
+    } ?: emptyList())
 }
 
 fun PokemonCardListResponse.toDomain(): List<PokemonCard> {
@@ -34,12 +34,12 @@ fun PokemonCardResponse.toDomain(): PokemonCard {
 
 fun PokemonCardDTO.toDomain(): PokemonCard {
     return PokemonCard(
-        id = id?: "",
-        name = name?: "",
-        supertype = supertype?: "",
-        subtypes = subtypes?: emptyList(),
-        hp = hp?: "",
-        types = types?: emptyList(),
+        id = id ?: "",
+        name = name ?: "",
+        supertype = supertype ?: "",
+        subtypes = subtypes ?: emptyList(),
+        hp = hp ?: "",
+        types = types ?: emptyList(),
         evolvesTo = evolvesTo,
         rules = rules,
         attacks = attacks?.map { attackDTO ->
@@ -50,82 +50,87 @@ fun PokemonCardDTO.toDomain(): PokemonCard {
                 damage = attackDTO.damage,
                 text = attackDTO.text
             )
-        }?: emptyList(),
+        } ?: emptyList(),
         weaknesses = weaknesses?.map { weaknessDTO ->
             Weakness(
-                type = weaknessDTO.type?: "",
-                value = weaknessDTO.value?: ""
+                type = weaknessDTO.type ?: "",
+                value = weaknessDTO.value ?: ""
             )
-        }?: emptyList(),
-        retreatCost = retreatCost?: emptyList(),
-        convertedRetreatCost = convertedRetreatCost?: 0,
+        } ?: emptyList(),
+        retreatCost = retreatCost ?: emptyList(),
+        convertedRetreatCost = convertedRetreatCost ?: 0,
         set = CardSet(
-            id = set?.id?: "",
-            name = set?.name?: "",
-            series = set?.series?: "",
-            printedTotal = set?.printedTotal?: 0,
-            total = set?.total?: 0,
+            id = set?.id ?: "",
+            name = set?.name ?: "",
+            series = set?.series ?: "",
+            printedTotal = set?.printedTotal ?: 0,
+            total = set?.total ?: 0,
             legalities = Legalities(
-                unlimited = set?.legalities?.unlimited?: "",
+                unlimited = set?.legalities?.unlimited ?: "",
                 standard = set?.legalities?.standard.toString(),
                 expanded = set?.legalities?.expanded.toString()
             ),
-            ptcgoCode = set?.ptcgoCode?: "",
-            releaseDate = set?.releaseDate?: "",
-            updatedAt = set?.updatedAt?: "",
+            ptcgoCode = set?.ptcgoCode ?: "",
+            releaseDate = set?.releaseDate ?: "",
+            updatedAt = set?.updatedAt ?: "",
             images = Images(
-                symbol = set?.images?.symbol?: "",
-                logo = set?.images?.logo?: ""
+                symbol = set?.images?.symbol ?: "",
+                logo = set?.images?.logo ?: ""
             )
         ),
-        number = number?: "",
-        artist = artist?: "",
-        rarity = rarity?: "",
-        nationalPokedexNumbers = nationalPokedexNumbers?: emptyList(),
+        number = number ?: "",
+        artist = artist ?: "",
+        rarity = rarity ?: "",
+        nationalPokedexNumbers = nationalPokedexNumbers ?: emptyList(),
         legalities = Legalities(
-            unlimited = legalities?.unlimited?: "",
+            unlimited = legalities?.unlimited ?: "",
             standard = legalities?.standard.toString(),
             expanded = legalities?.expanded.toString()
         ),
         images = CardImages(
-            small = images?.small?: "",
-            large = images?.large?: ""
+            small = images?.small ?: "",
+            large = images?.large ?: ""
         ),
-        tcgPlayer = tcgPlayer?.let { tcgPlayer -> TcgPlayer(
-            url = tcgPlayer.url,
-            updatedAt = tcgPlayer.updatedAt,
-            prices = tcgPlayer.prices?.let { prices -> Prices(
-                holoFoil = prices.holofoil?.let { holofoil -> Holofoil(
-                    low = holofoil.low?: 0.0,
-                    mid = holofoil.mid?: 0.0,
-                    high = holofoil.high?: 0.0,
-                    market = holofoil.market?: 0.0,
-                    directLow = holofoil.directLow?: 0.0
-                )}
-            )}
-        )
+        tcgPlayer = tcgPlayer?.let { tcgPlayer ->
+            TcgPlayer(
+                url = tcgPlayer.url,
+                updatedAt = tcgPlayer.updatedAt,
+                prices = tcgPlayer.prices?.let { prices ->
+                    Prices(
+                        holoFoil = prices.holofoil?.let { holofoil ->
+                            Holofoil(
+                                low = holofoil.low ?: 0.0,
+                                mid = holofoil.mid ?: 0.0,
+                                high = holofoil.high ?: 0.0,
+                                market = holofoil.market ?: 0.0,
+                                directLow = holofoil.directLow ?: 0.0
+                            )
+                        }
+                    )
+                }
+            )
         }
     )
 }
 
 fun CardSetDTO.toDomain(): CardSet {
     return CardSet(
-        id = id?: "",
-        name = name?: "",
-        series = series?: "",
-        printedTotal = printedTotal?: 0,
-        total = total?: 0,
+        id = id ?: "",
+        name = name ?: "",
+        series = series ?: "",
+        printedTotal = printedTotal ?: 0,
+        total = total ?: 0,
         legalities = Legalities(
             unlimited = legalities?.unlimited.toString(),
             standard = legalities?.standard.toString(),
             expanded = legalities?.expanded.toString()
         ),
-        ptcgoCode = ptcgoCode?: "",
-        releaseDate = releaseDate?: "",
-        updatedAt = updatedAt?: "",
+        ptcgoCode = ptcgoCode ?: "",
+        releaseDate = releaseDate ?: "",
+        updatedAt = updatedAt ?: "",
         images = Images(
-            symbol = images.symbol?: "",
-            logo = images.logo?: ""
+            symbol = images.symbol ?: "",
+            logo = images.logo ?: ""
         )
     )
 }

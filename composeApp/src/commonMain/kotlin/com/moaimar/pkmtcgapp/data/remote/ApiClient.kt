@@ -1,6 +1,5 @@
 package com.moaimar.pkmtcgapp.data.remote
 
-import PokemonCardDTO
 import PokemonCardListResponse
 import PokemonCardResponse
 import com.moaimar.pkmtcgapp.data.remote.apimodel.CardSetDTO
@@ -19,6 +18,7 @@ class ApiClient(private val client: HttpClient) {
             parameter("q", "set.id:$setId")
         }.body()
     }
+
     suspend fun fetchTCGSetList(page: Int, pageSize: Int): CardSetResponse {
         println("dev: ${client.engine}")
         return client.get("sets") {

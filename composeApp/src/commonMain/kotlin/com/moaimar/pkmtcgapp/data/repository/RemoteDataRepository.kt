@@ -2,8 +2,6 @@ package com.moaimar.pkmtcgapp.data.repository
 
 import com.moaimar.pkmtcgapp.data.remote.ApiClient
 import com.moaimar.pkmtcgapp.data.remote.mapper.toDomain
-import com.moaimar.pkmtcgapp.domain.model.CardSet
-import com.moaimar.pkmtcgapp.domain.model.PokemonCard
 
 class RemoteDataRepository(private val apiClient: ApiClient) {
     suspend fun fetchTCGCardList(page: Int, pageSize: Int, setId: String) =

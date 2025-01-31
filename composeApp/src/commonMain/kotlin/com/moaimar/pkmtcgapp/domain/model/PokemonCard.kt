@@ -58,3 +58,55 @@ data class Holofoil(
     val market: Double,
     val directLow: Double
 )
+
+fun getMockPokemonCardList(): List<PokemonCard> {
+    return List(10) { index ->
+        PokemonCard(
+            id = index.toString(),
+            name = "",
+            supertype = "",
+            subtypes = emptyList(),
+            hp = "",
+            types = emptyList(),
+            evolvesTo = emptyList(),
+            rules = emptyList(),
+            attacks = emptyList(),
+            weaknesses = emptyList(),
+            retreatCost = emptyList(),
+            convertedRetreatCost = 0,
+            set = CardSet(
+                id = "",
+                name = "",
+                series = "",
+                printedTotal = 0,
+                total = 0,
+                legalities = Legalities(
+                    unlimited = "",
+                    standard = "",
+                    expanded = ""
+                ),
+                ptcgoCode = "",
+                releaseDate = "",
+                updatedAt = "",
+                images = Images(
+                    symbol = "",
+                    logo = ""
+                )
+            ),
+            number = "",
+            artist = "",
+            rarity = "",
+            nationalPokedexNumbers = emptyList(),
+            legalities = Legalities(
+                unlimited = "",
+                standard = "",
+                expanded = ""
+            ),
+            images = CardImages(
+                small = "",
+                large = ""
+            ),
+            tcgPlayer = null
+        )
+    }
+}
